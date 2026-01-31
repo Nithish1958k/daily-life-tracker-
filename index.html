@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Daily Life Tracker</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#ec4899">
+
+</head>
+<body>
+
+    <header>
+        <h1>Daily Life Tracker</h1>
+        <p>Your personal daily companion</p>
+        <button onclick="toggleDarkMode()" id="darkToggle">🌙 Dark Mode</button>
+    </header>
+
+    <nav>
+        <a href="index.html">Dashboard</a>
+        <a href="food.html">Food</a>
+        <a href="habits.html">Habits</a>
+        <a href="diary.html">Diary</a>
+        <a href="reports.html">Weekly Report</a>
+        <a href="achievements.html">Achievements</a>
+    </nav>
+
+    <main>
+        <section class="card">
+            <h2>Today</h2>
+            <p id="today-date"></p>
+        </section>
+    
+        <section class="card">
+            <h3>Habits Overview</h3>
+            <ul>
+                <li>Total Habits: <strong id="total-habits">0</strong></li>
+                <li>Completed Today: <strong id="done-today">0</strong></li>
+                <li>Highest Streak: 🔥 <strong id="highest-streak">0</strong></li>
+            </ul>
+        </section>
+    
+        <section class="card">
+            <h3>Achievements 🏆</h3>
+            <p>Badges Unlocked: <strong id="badge-count">0</strong></p>
+            <a href="achievements.html">View Achievements</a>
+        </section>
+        <section class="card">
+            <h3>💧 Water Intake</h3>
+            <p>
+                Today: <strong id="water-count">0</strong> glasses
+            </p>
+            <button onclick="addWater()">+ Add Glass</button>
+        </section>
+        <section class="card">
+            <h3>🍽️ Food Summary</h3>
+            <p>Meals Logged: <strong id="meal-count">0</strong></p>
+            <p>Total Calories: <strong id="calorie-total">0</strong> kcal</p>
+        </section>
+        <section class="card">
+            <h3>⚖️ Weight Goal</h3>
+            <p>Current: <strong id="current-weight">--</strong> kg</p>
+            <p>Goal: <strong id="goal-weight">--</strong> kg</p>
+        
+            <input type="number" id="weightInput" placeholder="Enter today’s weight">
+            <input type="number" id="goalInput" placeholder="Enter goal weight">
+            <br><br>
+            <button onclick="saveWeight()">Save Weight</button>
+        </section>
+        
+        
+    </main>
+    
+
+    <script src="js/storage.js"></script>
+    <script src="js/dashboard.js"></script>
+
+    <script>
+        if ("serviceWorker" in navigator) {
+            navigator.serviceWorker.register("service-worker.js")
+                .then(() => console.log("Service Worker Registered"));
+        }
+        </script>
+        
+
+</body>
+</html>
+
