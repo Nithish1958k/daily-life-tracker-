@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Food Tracker</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#ec4899">
+
+</head>
+<body>
+
+<h2>Food Tracker</h2>
+
+<label>Meal Type</label><br>
+<select id="mealType">
+    <option>Breakfast</option>
+    <option>Lunch</option>
+    <option>Dinner</option>
+    <option>Snacks</option>
+</select>
+
+<br><br>
+
+<label>Dish Name</label><br>
+<input type="text" id="dishName" placeholder="Enter dish name">
+
+<br><br>
+
+<label>Food Image</label><br>
+<input type="file" id="foodImage" accept="image/*">
+
+<br><br>
+
+<button onclick="saveFood()">Save Meal</button>
+
+<hr>
+
+<h3>Today’s Meals</h3>
+<div id="mealList"></div>
+
+<script src="js/storage.js"></script>
+<script src="js/macros.js"></script>
+<script src="js/food.js"></script>
+
+</body>
+</html>
